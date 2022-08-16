@@ -35,6 +35,14 @@ export const actions = {
         const errorMessage = err.message
         throw new Error(errorMessage)
       })
+  },
+  async updateMovie({ commit }, { movieId, data }) {
+    await axios.put(`http://localhost:3001/api/movies/${movieId}`, data)
+      .then(async (response) => { })
+      .catch((err) => {
+        const errorMessage = err.message
+        throw new Error(errorMessage)
+      })
   }
 };
 export const mutations = {
